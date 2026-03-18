@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clovita Wear – Smart Wearable UI | Prajakta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #000;
+            --card: #111;
+            --text: #fff;
+            --muted: #a0a0a0;
+            --border: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Corbel', 'Segoe UI', sans-serif;
+            padding: 60px 138px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 20px;
+        }
+
+        section {
+            margin-bottom: 120px;
+            max-width: 1000px;
+        }
+
+        h1 {
+            font-size: 96px;
+            font-weight: 400;
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 800px;
+        }
+
+        .meta {
+            display: flex;
+            gap: 40px;
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        .image-box img{
+width:100%;
+height:auto;
+display:block;
+border-radius:8px;
+}
+
+        .info-row{
+display:flex;
+gap:40px;
+}
+
+.info-row section{
+flex:1;
+}
+
+.ui-images img{
+    width: 100%;
+    height: auto;
+    display:block;
+    border-radius: 10px;
+}
+
+.ui-images{
+     margin-top: 20px;
+}
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        th {
+            color: white;
+            font-weight: 400;
+        }
+
+        td {
+            color: var(--muted);
+        }
+
+        footer {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .back {
+            margin-top: 140px;
+        }
+
+        .back a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid white;
+            padding-bottom: 4px;
+        }
+
+        @media (max-width: 1100px) {
+            body { padding: 40px 6%; }
+            h1 { font-size: 64px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">@thepricore</div>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section>
+    <h1>Clovita<br>Smart Wearable UI</h1>
+    <p>
+        A minimalist wearable interface concept designed to present
+        essential health insights clearly on small screens.
+    </p>
+</section>
+
+<!-- META -->
+<section class="meta">
+    <div><strong>Role:</strong> UI/UX Designer</div>
+    <div><strong>Tools:</strong> Figma</div>
+    <div><strong>Platform:</strong> Wearable App</div>
+    <div><strong>Type:</strong> Concept Project</div>
+</section>
+
+<div class="info-row">
+<!-- PROBLEM -->
+<section>
+    <h2>The Problem</h2>
+    <p>
+        Most wearable devices overload users with dense data,
+        making it difficult to quickly understand health information
+        during daily use.
+    </p>
+</section>
+
+<!-- GOAL -->
+<section>
+    <h2>Project Goal</h2>
+    <p>
+        To design a clean and intuitive wearable UI that allows users
+        to monitor key health metrics effortlessly at a glance.
+    </p>
+</section>
+
+<!-- USERS -->
+<section>
+    <h2>Target Users</h2>
+    <p>
+        • Health-conscious individuals<br>
+        • Users who prefer minimal, distraction-free interfaces
+    </p>
+</section>
+</div>
+
+<!-- UX PROCESS -->
+<section>
+    <h2>UX Process</h2>
+    <p>
+        The process focused on prioritizing essential data,
+        reducing visual clutter, and ensuring readability
+        on small wearable screens.
+    </p>
+</section>
+
+<!-- WIREFRAMING -->
+<section>
+    <h2>Wireframing</h2>                                                                                                                                                        +       
+    <p>
+        Low-fidelity wireframes were created to explore layout density,
+        information hierarchy, and interaction patterns suitable
+        for wearable devices.
+    </p>
+
+    <div class="image-box">
+         <img src="Image/Wireframes.jpg" alt="Wireframe"><p> Wireframes (Home, Metrics, Detail)"</p>
+    </div>
+</section>
+
+<!-- IMPACT TABLE -->
+<section>
+    <h2>Impact</h2>
+
+    <table>
+        <tr>
+            <th>Aspect</th>
+            <th>Before</th>
+            <th>After Clovita</th>
+        </tr>
+        <tr>
+            <td>Readability</td>
+            <td>Low</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Cognitive Load</td>
+            <td>High</td>
+            <td>Reduced</td>
+        </tr>
+        <tr>
+            <td>Usability</td>
+            <td>Confusing</td>
+            <td>Intuitive</td>
+        </tr>
+    </table>
+</section>
+
+<!-- UI SCREENS -->
+<section>
+    <h2>UI Design</h2>
+    <p>
+        The final UI uses minimal typography, clear iconography,
+        and subtle color cues to improve glance-based usability.
+    </p>
+
+    <div class="ui-images">
+  <img src="Image/Frame 8.png" alt="Home Screen">
+</div>
+</section>
+
+<!-- OUTCOME -->
+<section>
+    <h2>Final Outcome</h2>
+    <p>
+        Clovita Wear demonstrates how thoughtful UI decisions
+        can improve usability and clarity in wearable experiences.
+    </p>
+</section>
+
+<!-- BACK -->
+<div class="back">
+    <a href="index.html">← Back to Home</a>
+</div>
+
+<footer>
+    © 2026 Prajakta | UX/UI Designer
+</footer>
+
+</body>
+</html>

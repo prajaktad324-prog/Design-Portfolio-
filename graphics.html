@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Graphics | Prajakta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --bg:#000;
+    --text:#fff;
+    --muted:#a0a0a0;
+    --card:#111;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Corbel','Segoe UI',sans-serif;
+    padding:60px 138px;
+}
+
+/* Header */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:120px;
+}
+
+.logo {
+    font-size:24px;
+}
+
+nav a {
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* Page Title */
+section {
+    max-width:1200px;
+    margin-bottom:120px;
+}
+
+h1 {
+    font-size:96px;
+    font-weight:400;
+    letter-spacing:-0.05em;
+    margin-bottom:20px;
+}
+
+.subtitle {
+    font-size:22px;
+    color:var(--muted);
+}
+
+/* Gallery */
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(3, 2fr);
+    gap:67px;
+}
+
+.graphic-card img {
+    width: 100%;;
+    height:auto;
+    object-fit:cover;
+    background:var(--card);
+    display:block;
+}
+
+.graphic-info {
+    margin-top:12px;
+}
+
+.graphic-info h3 {
+    font-size:16px;
+    font-weight:400;
+    margin-bottom:4px;
+}
+
+.graphic-info p {
+    font-size:14px;
+    color:var(--muted);
+}
+
+/* Ending text */
+.end-text {
+    margin-top:150px;
+    max-width:900px;
+    font-size:20px;
+    line-height:1.6;
+    color:var(--muted);
+}
+
+/* Back */
+.back {
+    margin-top:120px;
+}
+
+.back a {
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid white;
+    padding-bottom:4px;
+}
+
+/* Responsive */
+@media (max-width:1100px){
+    body { padding:40px 6%; }
+    h1 { font-size:64px; }
+    .gallery { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width:600px){
+    .gallery { grid-template-columns:1fr; }
+}
+
+ footer {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+
+/* Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup:target {
+  display: flex;
+}
+
+.popup-images {
+  display: flex;
+  gap: 24px;
+}
+
+.popup-images img {
+  height: 80vh;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">@thepricore</div>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<section>
+    <h1>Graphics</h1>
+    <p class="subtitle">Posters, cards & visual explorations</p>
+</section>
+
+<section class="gallery">
+
+    <div class="graphic-card">
+        <img src="Image/Untitled (6).png" alt="">
+        <div class="graphic-info">
+            <h3>Paradaise Perfume Poster</h3>
+            <p>Poster Design</p>
+        </div>
+    </div>
+
+    <a href="#riseup" class="graphic-card">
+        <img src="Image/Untitled (1).jpeg" alt="">
+        <div class="graphic-info">
+            <h3>Rise Up – Series</h3>
+            <p>Poster Series · Concept Design</p>
+        </div>
+    </a>
+
+    <a href="#TLWC" class="graphic-card">
+        <img src="Image/1.png" alt="">
+        <div class="graphic-info">
+            <h3>Psychiatrists Clinic Pamplate</h3>
+            <p>Brand Visuals</p>
+        </div>
+    </a>
+
+    <div class="graphic-card">
+        <img src="Image/साखरपुडा.Card Design.jpeg" alt="">
+        <div class="graphic-info">
+            <h3>Sakharpuda/Engangment</h3>
+            <p>Invitation Card · Print Design</p>
+        </div>
+    </div>
+
+    <div class="graphic-card">
+        <img src="Image/Card.01.jpg" alt="">
+        <div class="graphic-info">
+            <h3>Engagement Card</h3>
+            <p>Invitation Card · Canva</p>
+        </div>
+    </div>
+
+    
+    <div class="graphic-card">
+        <img src="Image/Whispers in the Dark.jpeg" alt="">
+        <div class="graphic-info">
+            <h3>Whispers in the Dark</h3>
+            <p>Book Cover · Visual Storytelling</p>
+        </div>
+    </div>
+
+</section>
+
+<p class="end-text">
+A curated selection of graphic design work focused on visual clarity, composition, and storytelling across posters, invitations, and brand concepts.
+</p>
+
+<div class="back">
+    <a href="index.html">← Back to Home</a>
+</div>
+
+<!-- POPUPS -->
+
+<div id="riseup" class="popup">
+    <a href="#" class="close">×</a>
+    <div class="popup-images">
+        <img src="Image/Untitled (1).jpeg">
+        <img src="Image/Untitled (3).jpeg">
+    </div>
+</div>
+
+<div id="TLWC" class="popup">
+    <a href="#" class="close">×</a>
+    <div class="popup-images">
+        <img src="Image/1.png">
+        <img src="Image/2.png">
+    </div>
+</div>
+
+<footer>
+    © 2026 Prajakta | UX/UI Designer
+</footer>
+
+</body>
+</html>

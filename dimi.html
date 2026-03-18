@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DiMi – Digital Menu App | Prajakta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #000;
+            --card: #111;
+            --text: #fff;
+            --muted: #a0a0a0;
+            --border: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Corbel', 'Segoe UI', sans-serif;
+            padding: 60px 138px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .hero-box {
+            border: 2px solid white;
+            width: 520px;
+            height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 20px;
+        }
+
+        section {
+            margin-bottom: 120px;
+            max-width: 1000px;
+        }
+
+        h1 {
+            font-size: 96px;
+            font-weight: 400;
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 800px;
+        }
+
+        /* Meta info */
+        .meta {
+            display: flex;
+            gap: 40px;
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        /* Image placeholder */
+        .image-box {
+  padding: 24px;
+  margin-top: 40px;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-row{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    max-width: 1200px;
+    margin-bottom: 120px;
+}
+
+.info-row section{
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px){
+    .info-row{
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+ footer {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        th {
+            color: white;
+            font-weight: 400;
+        }
+
+        td {
+            color: var(--muted);
+        }
+
+        .back {
+            margin-top: 140px;
+        }
+
+        .back a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid white;
+            padding-bottom: 4px;
+        }
+
+        @media (max-width: 1100px) {
+            body { padding: 40px 6%; }
+            h1 { font-size: 64px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">@thepricore</div>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section>
+    <h1>DiMi<br>Digital Menu App</h1>
+    <p>
+        A QR-based digital menu experience designed to reduce order time,
+        minimize staff dependency, and improve restaurant efficiency.
+    </p>
+</section>
+
+<!-- META -->
+<section class="meta">
+    <div><strong>Role:</strong> UX/UI Designer</div>
+    <div><strong>Tools:</strong> Figma</div>
+    <div><strong>Platform:</strong> Mobile App</div>
+    <div><str ong>Duration:</strong> 3 Weeks</div>
+</section>
+
+<div class="info-row">
+<!-- PROBLEM -->
+<section>
+    <h2>The Problem</h2>
+    <p>
+        Traditional restaurant menus slow down ordering, increase staff dependency,
+        and create hygiene concerns—especially during peak hours.
+    </p>
+</section>
+
+<!-- GOAL -->
+<section>
+    <h2>Project Goal</h2>
+    <p>
+        Design a digital menu experience that is fast, intuitive, and accessible,
+        while reducing operational load for restaurants.
+    </p>
+</section>
+
+<!-- USERS -->
+<section>
+    <h2>Target Users</h2>
+    <p>
+        • Restaurant customers (18–45 years)<br>
+        • Small to medium restaurant owners
+    </p>
+</section>
+</div>
+
+<!-- UX PROCESS -->
+<section>
+    <h2>UX Process</h2>
+    <p>
+        The design process focused on understanding user pain points,
+        simplifying the ordering journey, and reducing cognitive load.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/Dimiflowchart.jpg" alt="DiMi UX Flow Diagram">
+    </div>
+</section>
+
+<!-- WIREFRAMING -->
+<section>
+    <h2>Wireframing</h2>
+    <p>
+        Low-fidelity wireframes were created to define layout structure,
+        content hierarchy, and user flow before moving to visual design.
+        This helped validate usability early and avoid unnecessary UI changes later.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/DiMi Lo-Fi.jpg" alt="DiMi Wireframes">
+    </div>
+</section>
+
+
+<!-- USER FLOW -->
+<section>
+    <h2>User Flow</h2>
+    <p>
+        Scan QR → Browse menu → Add items → Place order
+    </p>
+
+    <div class="image-box">
+         <img src="Image/dimi.png" alt="DiMi Wireframes">
+    </div>
+</section>
+
+<!-- IMPACT TABLE -->
+<section>
+    <h2>Impact</h2>
+
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After DiMi</th>
+        </tr>
+        <tr>
+            <td>Order Time</td>
+            <td>8–10 minutes</td>
+            <td>3–4 minutes</td>
+        </tr>
+        <tr>
+            <td>Staff Dependency</td>
+            <td>High</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <td>Ordering Errors</td>
+            <td>Frequent</td>
+            <td>Minimal</td>
+        </tr>
+    </table>
+</section>
+
+<!-- UI SCREENS -->
+<section>
+    <h2>UI Design</h2>
+    <p>
+        The interface follows a minimalist design approach with clear hierarchy,
+        simple navigation, and easy readability.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/Dimi User Flow.png" alt="DiMi Wireframes">
+    </div>
+</section>
+
+<!-- OUTCOME -->
+<section>
+    <h2>Final Outcome</h2>
+    <p>
+        DiMi delivers a faster, cleaner, and more efficient ordering experience,
+        improving both customer satisfaction and restaurant operations.
+    </p>
+</section>
+
+<!-- BACK -->
+<div class="back">
+    <a href="index.html">← Back to Home</a>
+</div>
+
+<footer>
+    © 2026 Prajakta | UX/UI Designer
+</footer>
+
+</body>
+</html>

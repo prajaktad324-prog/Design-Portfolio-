@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<hea>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajakta Portfolio | Exact Match</title>
+    <style>
+        /* 1. Global Reset & Theme */
+        :root {
+            --bg: #000000;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #ffffff; /* Keeping description white to match layout */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            /* Using Corbel as requested */
+            font-family: 'Corbel', 'Segoe UI', sans-serif;
+            padding: 60px 138px; /* X: 138 from your Figma */
+        }
+
+        /* 2. Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 200px; /* High margin for Y: 444 feel */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 24px;
+        }
+
+        /* 3. Hero Section (The Main Attraction) */
+        .hero {
+            max-width: 1002px; /* Exact Figma Width */
+            margin-bottom: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end; /* Aligns description to the bottom of the H1 */
+        }
+
+        .hero h1 {
+            font-size: 128px; /* Exact Figma Size */
+            font-weight: 400; /* Regular as per Figma */
+            letter-spacing: -0.06em; /* Exact -6% Letter Spacing */
+            line-height: 0.85;
+            margin-right: 30px;
+        }
+
+        .hero p {
+            font-size: 32px;
+            max-width: 480px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px; /* Minor adjustment for visual baseline */
+        }
+
+        /* 4. Bento Grid (Projects) */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 equal columns */
+            gap: 5px; /* Tight gap as seen in image */
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 80px 50px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .card h2 {
+            font-size: 42px; /* Bold Attraction */
+            font-weight: 400;
+            letter-spacing: -0.04em;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #a0a0a0; /* Slightly dimmed for hierarchy */
+            max-width: 320px;
+            line-height: 1.5;
+        }
+
+
+        /* 5. Footer */
+        footer {
+            margin-top: 100px;
+            text-align: center;
+            padding-bottom: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Responsive Mobile View */
+        @media (max-width: 1100px) {
+            body { padding: 40px 5%; }
+            .hero h1 { font-size: 80px; }
+            .hero p { font-size: 24px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">@thepricore</div>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="graphics.html">Graphics</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Hi, I’m prajakta UX/UI designer</h1>
+        <p>I focus on Minimalist design, I believe less can say more.</p>
+    </section>
+
+    <div class="grid">
+
+        <a href="dimi.html" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <h2>DiMi – Digital Menu App</h2>
+            <p>A modern restaurant digital menu app designed to improve order speed, reduce staff load, and enhance customer experience.</p>
+        </div>
+        </a>
+
+        <a href="noirstudio.html" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <h2>SynRience – Startup Research & Survival Guide</h2>
+            <p>A UX case study platform that helps young entrepreneurs validate business ideas.</p>
+        </div>
+        </a>
+
+        <a href="cybercafe.html" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <h2>Online Cyber Café</h2>
+            <p>A digital platform that helps users request online services like certificates, government forms, printing, and paperwork.</p>
+        </div>
+        </a>
+
+        <a href="clovita.html" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <h2>Clovita Wear – Smart Fashion UI Design</h2>
+            <p>A modern wearable smart device interface focused on simplicity and visually engaging UI design for tracking.</p>
+        </div>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 Prajakta | Designer
+    </footer>
+
+</body>
+</html> 

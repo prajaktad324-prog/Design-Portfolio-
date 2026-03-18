@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cyber Café | UX Case Study</title>
+
+    <style>
+        :root {
+            --bg: #000;
+            --card-bg: #111;
+            --text-primary: #fff;
+            --text-secondary: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Corbel', 'Segoe UI', sans-serif;
+            padding: 60px 138px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        nav a {
+            margin-left: 40px;
+            font-size: 20px;
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 120px;
+        }
+
+        .hero h1 {
+            font-size: 96px;
+            font-weight: 400;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+            max-width: 900px;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 28px;
+            max-width: 600px;
+            line-height: 1.2;
+            color: var(--text-secondary);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 100px;
+            max-width: 900px;
+        }
+
+        section h2 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 700px;
+        }
+
+        /* Image Placeholder */
+        .image-box {
+            margin-top: 40px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #000;
+        }
+
+        .info-row{
+display:flex;
+gap:40px;
+}
+
+.info-row section{
+flex:1;
+}
+
+        /* Table */
+        table {
+            margin-top: 40px;
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #333;
+            padding: 14px 0;
+            text-align: left;
+        }
+
+        th {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        footer {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .back {
+            margin-top: 140px;
+        }
+
+        .back a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid white;
+            padding-bottom: 4px;
+        }
+
+        @media (max-width: 1100px) {
+            body { padding: 40px 6%; }
+            .hero h1 { font-size: 64px; }
+            .hero p { font-size: 22px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">@thepricore</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Online Cyber Café Platform</h1>
+    <p>
+        A digital solution that simplifies access to online services like government forms,
+        certificates, and document processing.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/iPhone 16 - 2.jpg" alt="Online Cyber Cafe Platform Preview">
+    </div>
+</div>
+
+<!-- OVERVIEW -->
+<section>
+    <h2>Project Overview</h2>
+    <p>
+        Online Cyber Café is a web-based platform designed to help users request essential
+        online services without repeated physical visits. The platform focuses on clarity,
+        accessibility, and trust.
+    </p>
+</section>
+
+<div class="info-row">
+<!-- PROBLEM -->
+<section>
+    <h2>The Problem</h2>
+    <p>
+        Users often struggle with complex government websites, unclear document requirements,
+and multiple visits to cyber cafés, leading to frustration and wasted time.
+    </p>
+</section>
+
+<!-- GOAL -->
+<section>
+    <h2>Project Goal</h2>
+    <p>
+        To design a simple and reliable platform that allows users to submit service requests
+online while maintaining transparency and ease of use.
+    </p>
+</section>
+
+<!-- USERS -->
+<section>
+    <h2>Target Users</h2>
+    <p>
+        Students, job seekers, and individuals with low to medium digital literacy who require
+assistance with online services.
+    </p>
+</section>
+</div>
+
+<!-- UX PROCESS -->
+<section>
+    <h2>UX Process</h2>
+    <p>
+        The design process involved identifying user pain points, simplifying service categories,
+        creating clear navigation flows, and validating usability through wireframes.
+    </p>
+</section>
+
+<!-- WIREFRAMING -->
+<section>
+    <h2>Wireframing</h2>
+    <p>
+        Low-fidelity wireframes were created to define layout structure, content hierarchy,
+        and service request flows before moving to visual design.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/iPhone 16 - 3.jpg" alt="Cyber Cafe Wireframes">
+    </div>
+</section>
+
+<!-- USER FLOW -->
+<section>
+    <h2>User Flow</h2>
+    <p>
+        The user journey focuses on minimizing steps while ensuring clarity at each stage.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/cybercafe-userflow.jpg" alt="Cyber Cafe User Flow">
+    </div>
+</section>
+
+<!-- IMPACT -->
+<section>
+    <h2>Impact</h2>
+
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After Platform</th>
+        </tr>
+        <tr>
+            <td>Service Requests</td>
+            <td>Offline Only</td>
+            <td>Online + Offline</td>
+        </tr>
+        <tr>
+            <td>User Visits</td>
+            <td>Multiple</td>
+            <td>Reduced</td>
+        </tr>
+        <tr>
+            <td>Status Transparency</td>
+            <td>Low</td>
+            <td>High</td>
+        </tr>
+    </table>
+</section>
+
+<!-- UI DESIGN -->
+<section>
+    <h2>UI Design</h2>
+    <p>
+        The UI emphasizes simplicity with clear service cards, readable typography,
+        and minimal visual clutter to support accessibility.
+    </p>
+
+    <div class="image-box">
+        <img src="Image/Frame 00.png" alt="Cyber Cafe Final UI Home Screens">
+    </div>
+</section>
+
+<!-- OUTCOME -->
+<section>
+    <h2>Final Outcome</h2>
+    <p>
+        The platform improves accessibility to essential digital services while reducing
+        dependency on physical cyber cafés and increasing user trust.
+    </p>
+</section>
+
+<!-- BACK -->
+<div class="back">
+    <a href="index.html">← Back to Home</a>
+</div>
+
+<footer>
+    © 2026 Prajakta | UX/UI Designer
+</footer>
+
+</body>
+</html>

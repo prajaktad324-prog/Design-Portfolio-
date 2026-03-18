@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About | Prajakta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+    --bg:#000;
+    --text:#fff;
+    --muted:#a0a0a0;
+    --card:#111;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Corbel','Segoe UI',sans-serif;
+    padding:60px 138px;
+}
+
+/* Header */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:120px;
+}
+
+.logo{font-size:24px;}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* Layout */
+section{
+    max-width:1000px;
+    margin-bottom:120px;
+}
+
+.hero{
+    display:flex;
+    gap:80px;
+    align-items:flex-start;
+}
+
+.hero img{
+    width:360px;
+    height:320px;
+    object-fit:cover;
+    background:var(--card);
+}
+
+h1{
+    font-size:80px;
+    font-weight:400;
+    letter-spacing:-0.05em;
+    line-height:1;
+    margin-bottom:30px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.6;
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:32px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+ul{
+    list-style:none;
+    color:var(--muted);
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* Resume button */
+.resume-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:14px 28px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+/* Back */
+.back{
+    margin-top:120px;
+}
+
+.back a{
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid white;
+    padding-bottom:4px;
+}
+
+/* Responsive */
+@media(max-width:1100px){
+    body{padding:40px 6%;}
+    .hero{flex-direction:column;}
+    h1{font-size:56px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">@thepricore</div>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <!-- Replace image path -->
+    <img src="Image/IMG_20250606_181529_738.webp" alt="Prajakta Deshmukh">
+
+    <div>
+        <h1>I design digital experiences with clarity, structure, and intent.</h1>
+
+        <p>
+            I’m a self-taught UX/UI designer focused on building simple, usable, and meaningful
+            digital experiences. I enjoy solving problems through research, structure,
+            and thoughtful visual design.
+        </p>
+
+        <p>
+            Currently, I’m strengthening my skills in UX design, prototyping,
+            and front-end basics to better understand how designs translate into real products.
+        </p>
+
+        <a class="resume-btn" href="Image/Files/Prajakta Resume (4) (1).pdf" download>
+            Download Resume
+        </a>
+    </div>
+</section>
+
+<section>
+    <h2>Education</h2>
+    <ul>
+        <li>Google UX Design Certificate – Coursera (Ongoing)</li>
+        <li>BAMMC – Mumbai University</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Experience & Projects</h2>
+    <ul>
+        <li>UX/UI design for self-initiated and portfolio projects</li>
+        <li>Worked on products like DiMi and SynRience</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Skills & Tools</h2>
+    <ul>
+        <li>UX Research, User Flows, Wireframing, Prototyping</li>
+        <li>Figma, Canva, Adobe Express, Notion</li>
+        <li>Basic HTML & CSS</li>
+    </ul>
+</section>
+
+<p>
+I’m interested in working on early-stage ideas and products where design thinking and usability matter.
+</p>
+
+<div class="back">
+    <a href="index.html">← Back to Home</a>
+</div>
+
+</body>
+</html>
