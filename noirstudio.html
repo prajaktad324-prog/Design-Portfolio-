@@ -12,6 +12,7 @@
     --text:#fff;
     --muted:#a0a0a0;
     --border:#222;
+    --accent:#d0b99a;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -31,14 +32,24 @@ header{
     margin-bottom:120px;
 }
 
-.logo{font-size:24px;}
+.logo{
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:-0.04em;
+}
+
+.logo span{color:var(--accent);}
 
 nav a{
     color:white;
     text-decoration:none;
     margin-left:40px;
     font-size:20px;
+    transition:color 180ms ease;
 }
+
+nav a:hover,
+nav a:focus-visible{color:var(--accent);}
 
 /* Sections */
 section{
@@ -58,6 +69,7 @@ h2{
     font-size:42px;
     font-weight:400;
     margin-bottom:20px;
+    color:var(--accent);
 }
 
 p{
@@ -98,9 +110,13 @@ p{
     color:white;
     text-decoration:none;
     font-size:18px;
-    border-bottom:1px solid white;
+    border-bottom:1px solid var(--accent);
     padding-bottom:4px;
+    transition:color 180ms ease,border-color 180ms ease;
 }
+
+.back a:hover,
+.back a:focus-visible{color:var(--accent);}
 
 footer {
             margin-top: 120px;
@@ -121,7 +137,7 @@ footer {
 <body>
 
 <header>
-    <div class="logo">@thepricore</div>
+    <div class="logo">@thepri<span>core</span></div>
     <nav>
         <a href="index.html">Home</a>
     </nav>

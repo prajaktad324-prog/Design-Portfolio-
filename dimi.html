@@ -12,6 +12,7 @@
             --text: #fff;
             --muted: #a0a0a0;
             --border: #222;
+            --accent: #d0b99a;
         }
 
         * {
@@ -35,7 +36,7 @@
         }
 
         .hero-box {
-            border: 2px solid white;
+            border: 2px solid var(--accent);
             width: 520px;
             height: 520px;
             display: flex;
@@ -44,7 +45,13 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+        }
+
+        .logo span {
+            color: var(--accent);
         }
 
         nav a {
@@ -52,6 +59,12 @@
             text-decoration: none;
             margin-left: 40px;
             font-size: 20px;
+            transition: color 180ms ease;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--accent);
         }
 
         section {
@@ -71,6 +84,7 @@
             font-size: 42px;
             font-weight: 400;
             margin-bottom: 20px;
+            color: var(--accent);
         }
 
         p {
@@ -142,7 +156,7 @@
         }
 
         th {
-            color: white;
+            color: var(--accent);
             font-weight: 400;
         }
 
@@ -158,8 +172,14 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid var(--accent);
             padding-bottom: 4px;
+            transition: color 180ms ease, border-color 180ms ease;
+        }
+
+        .back a:hover,
+        .back a:focus-visible {
+            color: var(--accent);
         }
 
         @media (max-width: 1100px) {
@@ -172,7 +192,7 @@
 <body>
 
 <header>
-    <div class="logo">@thepricore</div>
+    <div class="logo">@thepri<span>core</span></div>
     <nav>
         <a href="index.html">Home</a>
     </nav>
@@ -192,7 +212,7 @@
     <div><strong>Role:</strong> UX/UI Designer</div>
     <div><strong>Tools:</strong> Figma</div>
     <div><strong>Platform:</strong> Mobile App</div>
-    <div><str ong>Duration:</strong> 3 Weeks</div>
+    <div><strong>Duration:</strong> 7 Weeks</div>
 </section>
 
 <div class="info-row">

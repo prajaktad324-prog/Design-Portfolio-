@@ -1,176 +1,896 @@
 <!DOCTYPE html>
 <html lang="en">
-<hea>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prajakta Portfolio | Exact Match</title>
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="Prajakta is a UX/UI designer creating thoughtful, clear digital experiences. Explore selected product design and visual design projects.">
+    <title>Prajakta Deshmukh — UX/UI Designer</title>
     <style>
-        /* 1. Global Reset & Theme */
         :root {
-            --bg: #000000;
-            --card-bg: #111111;
-            --text-primary: #ffffff;
-            --text-secondary: #ffffff; /* Keeping description white to match layout */
+            color-scheme: dark;
+            --bg: #090909;
+            --surface: #111111;
+            --surface-hover: #171717;
+            --text: #f4f2ee;
+            --muted: #a5a29c;
+            --subtle: #74716c;
+            --line: rgba(255, 255, 255, 0.12);
+            --accent: #d0b99a;
+            --page-width: 1240px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text-primary);
-            /* Using Corbel as requested */
-            font-family: 'Corbel', 'Segoe UI', sans-serif;
-            padding: 60px 138px; /* X: 138 from your Figma */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 32px;
         }
 
-        /* 2. Header Navigation */
-        header {
+        body {
+            min-width: 320px;
+            margin: 0;
+            background:
+                radial-gradient(ellipse at 78% 13%, rgba(208, 185, 154, 0.07), transparent 28rem),
+                var(--bg);
+            color: var(--text);
+            font-family: "Corbel", "Segoe UI", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 5px;
+        }
+
+        .page-shell {
+            width: min(var(--page-width), calc(100% - 96px));
+            margin-inline: auto;
+        }
+
+        .skip-link {
+            position: absolute;
+            z-index: 10;
+            top: 16px;
+            left: 16px;
+            padding: 12px 16px;
+            transform: translateY(-160%);
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        .site-header {
             display: flex;
-            justify-content: space-between;
+            min-height: 104px;
             align-items: center;
-            margin-bottom: 200px; /* High margin for Y: 444 feel */
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 400;
-        }
-
-        nav a {
-            color: white;
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: -0.04em;
             text-decoration: none;
-            margin-left: 40px;
-            font-size: 24px;
         }
 
-        /* 3. Hero Section (The Main Attraction) */
-        .hero {
-            max-width: 1002px; /* Exact Figma Width */
-            margin-bottom: 120px;
+        .logo span {
+            color: var(--accent);
+        }
+
+        .primary-nav {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-end; /* Aligns description to the bottom of the H1 */
+            align-items: center;
+            gap: clamp(24px, 4vw, 52px);
+        }
+
+        .primary-nav a {
+            color: var(--muted);
+            font-size: 15px;
+            text-decoration: none;
+            transition: color 180ms ease;
+        }
+
+        .primary-nav a:hover {
+            color: var(--text);
+        }
+
+        .primary-nav .nav-cta {
+            padding: 11px 16px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--text);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+            gap: 56px;
+            align-items: end;
+            padding-block: clamp(96px, 13vw, 174px) clamp(88px, 11vw, 140px);
+        }
+
+        .eyebrow,
+        .project-number,
+        .section-kicker {
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.17em;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 128px; /* Exact Figma Size */
-            font-weight: 400; /* Regular as per Figma */
-            letter-spacing: -0.06em; /* Exact -6% Letter Spacing */
-            line-height: 0.85;
-            margin-right: 30px;
+            max-width: 800px;
+            margin: 22px 0 0;
+            font-size: clamp(58px, 9.2vw, 126px);
+            font-weight: 400;
+            letter-spacing: -0.075em;
+            line-height: 0.91;
         }
 
-        .hero p {
-            font-size: 32px;
-            max-width: 480px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 10px; /* Minor adjustment for visual baseline */
+        .hero h1 span {
+            color: var(--muted);
         }
 
-        /* 4. Bento Grid (Projects) */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 equal columns */
-            gap: 5px; /* Tight gap as seen in image */
+        .hero-aside {
+            max-width: 370px;
+            padding-bottom: 8px;
         }
 
-        .card {
-            background-color: var(--card-bg);
-            padding: 80px 50px;
-            min-height: 350px;
+        .hero-aside p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 19px;
+            line-height: 1.55;
+        }
+
+        .hero-actions {
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
         }
 
-        .card h2 {
-            font-size: 42px; /* Bold Attraction */
+        .button {
+            display: inline-flex;
+            min-height: 46px;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 17px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: var(--surface-hover);
+        }
+
+        .button-primary {
+            border-color: var(--text);
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .button-primary:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .button-arrow,
+        .card-arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .work-section {
+            padding-bottom: clamp(96px, 12vw, 150px);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 28px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-heading h2 {
+            margin: 7px 0 0;
+            font-size: clamp(31px, 4vw, 48px);
+            font-weight: 400;
+            letter-spacing: -0.055em;
+        }
+
+        .section-count {
+            color: var(--subtle);
+            font-size: 13px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 48px 24px;
+        }
+
+        .project-card {
+            display: block;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .project-media {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1.54;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            background: var(--surface);
+        }
+
+        .project-media::after {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.22));
+            content: "";
+            pointer-events: none;
+        }
+
+        .project-media img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 500ms cubic-bezier(0.2, 0.65, 0.3, 1);
+        }
+
+        .project-card:hover .project-media img,
+        .project-card:focus-visible .project-media img {
+            transform: scale(1.035);
+        }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 17px;
+        }
+
+        .project-number {
+            color: var(--subtle);
+            font-size: 10px;
+        }
+
+        .card-arrow {
+            color: var(--muted);
+            transition: color 180ms ease, transform 180ms ease;
+        }
+
+        .project-card:hover .card-arrow {
+            transform: translate(3px, -3px);
+            color: var(--accent);
+        }
+
+        .project-card h3 {
+            margin: 8px 0 6px;
+            font-size: clamp(21px, 2.5vw, 28px);
             font-weight: 400;
             letter-spacing: -0.04em;
-            margin-bottom: 15px;
-            line-height: 1.1;
         }
 
-        .card p {
-            font-size: 16px;
-            color: #a0a0a0; /* Slightly dimmed for hierarchy */
-            max-width: 320px;
+        .project-card p {
+            max-width: 470px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .video-section {
+            margin-bottom: clamp(96px, 12vw, 150px);
+        }
+
+        .video-rail {
+            width: 100%;
+        }
+
+        .video-track {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .video-card {
+            width: clamp(250px, 20vw, 290px);
+            flex: 0 1 290px;
+        }
+
+        .video-preview {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 9 / 16;
+            border: 1px solid var(--line);
+            background:
+                radial-gradient(ellipse at 72% 28%, rgba(208, 185, 154, 0.3), transparent 32%),
+                radial-gradient(ellipse at 24% 86%, rgba(208, 185, 154, 0.12), transparent 38%),
+                linear-gradient(135deg, #24211d, #111 60%, #1a1714);
+        }
+
+        .video-card:nth-child(2) .video-preview {
+            background:
+                radial-gradient(ellipse at 28% 72%, rgba(137, 151, 161, 0.25), transparent 34%),
+                linear-gradient(145deg, #202327, #101112 68%);
+        }
+
+        .video-card:nth-child(3) .video-preview {
+            background:
+                radial-gradient(ellipse at 68% 35%, rgba(176, 144, 124, 0.24), transparent 34%),
+                linear-gradient(135deg, #241e1d, #111 66%);
+        }
+
+        .video-preview::before,
+        .video-preview::after {
+            position: absolute;
+            width: 60%;
+            height: 140%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+            transform: rotate(35deg);
+        }
+
+        .video-preview::after {
+            width: 42%;
+            height: 120%;
+            transform: rotate(-35deg);
+        }
+
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            color: rgba(244, 242, 238, 0.68);
+            font-size: clamp(24px, 4vw, 42px);
+            font-weight: 400;
+            letter-spacing: -0.07em;
+        }
+
+        .video-element {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 250ms ease;
+        }
+
+        .video-card.video-ready .video-element {
+            opacity: 1;
+        }
+
+        .video-card.video-ready .video-placeholder {
+            display: none;
+        }
+
+        .video-number {
+            position: absolute;
+            z-index: 2;
+            top: 18px;
+            left: 18px;
+            color: rgba(244, 242, 238, 0.76);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .video-card-info {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px 16px;
+            align-items: start;
+            padding: 17px 2px 0;
+        }
+
+        .video-card-info h3 {
+            margin: 0;
+            font-size: clamp(20px, 2.3vw, 26px);
+            font-weight: 400;
+            letter-spacing: -0.045em;
+        }
+
+        .video-card-info p {
+            grid-column: 1;
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
             line-height: 1.5;
         }
 
-
-        /* 5. Footer */
-        footer {
-            margin-top: 100px;
-            text-align: center;
-            padding-bottom: 40px;
-            font-size: 14px;
-            color: #666;
+        .video-play-button {
+            display: inline-flex;
+            min-height: 38px;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 13px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: transparent;
+            color: var(--text);
+            font: inherit;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: border-color 180ms ease, background-color 180ms ease;
         }
 
-        /* Responsive Mobile View */
-        @media (max-width: 1100px) {
-            body { padding: 40px 5%; }
-            .hero h1 { font-size: 80px; }
-            .hero p { font-size: 24px; }
-            .grid { grid-template-columns: 1fr; }
+        .video-play-button:not(:disabled) {
+            cursor: pointer;
+        }
+
+        .video-play-button:not(:disabled):hover {
+            border-color: var(--accent);
+            background: rgba(208, 185, 154, 0.1);
+        }
+
+        .video-play-button:disabled {
+            color: var(--subtle);
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 760px) {
+            .video-rail {
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding-bottom: 12px;
+                scroll-snap-type: x mandatory;
+                scrollbar-color: var(--subtle) transparent;
+                scrollbar-width: thin;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .video-track {
+                width: max-content;
+                justify-content: flex-start;
+                gap: 18px;
+            }
+
+            .video-card {
+                width: min(78vw, 300px);
+                flex: 0 0 min(78vw, 300px);
+                scroll-snap-align: start;
+            }
+        }
+
+        @media (min-width: 761px) and (max-width: 1200px) {
+            .video-card {
+                width: min(100%, 260px);
+                flex-basis: 260px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .video-element {
+                transition: none;
+            }
+        }
+
+        .site-footer {
+            display: flex;
+            min-height: 90px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-top: 1px solid var(--line);
+            color: var(--subtle);
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        @media (max-width: 760px) {
+            .page-shell {
+                width: min(100% - 40px, var(--page-width));
+            }
+
+            .site-header {
+                min-height: 78px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .primary-nav {
+                gap: 18px;
+            }
+
+            .primary-nav a {
+                font-size: 14px;
+            }
+
+            .primary-nav .nav-cta {
+                padding: 9px 13px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding-block: 94px 88px;
+            }
+
+            .hero h1 {
+                max-width: 620px;
+                font-size: clamp(58px, 13vw, 92px);
+            }
+
+            .hero-aside {
+                max-width: 480px;
+            }
+
+            .project-grid {
+                gap: 38px 18px;
+            }
+
+            .project-media {
+                aspect-ratio: 1.25;
+            }
+
+        }
+
+        @media (max-width: 540px) {
+            .page-shell {
+                width: calc(100% - 36px);
+            }
+
+            .primary-nav {
+                gap: 14px;
+            }
+
+            .primary-nav a {
+                font-size: 13px;
+            }
+
+            .primary-nav .nav-cta {
+                padding: 8px 11px;
+            }
+
+            .hero {
+                padding-block: 76px 72px;
+            }
+
+            .hero h1 {
+                font-size: clamp(52px, 15vw, 78px);
+            }
+
+            .hero-aside p {
+                font-size: 17px;
+            }
+
+            .section-heading {
+                align-items: center;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .project-media {
+                aspect-ratio: 1.45;
+            }
+
+            .project-card h3 {
+                font-size: 24px;
+            }
+
+            .site-footer {
+                min-height: 100px;
+                align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                gap: 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="logo" href="index.html" aria-label="Prajakta home">@thepri<span>core</span></a>
+            <nav class="primary-nav" aria-label="Main navigation">
+                <a href="about.html">About</a>
+                <a href="graphics.html">Graphics</a>
+                <a class="nav-cta" href="#work">Selected work <span aria-hidden="true">↘</span></a>
+            </nav>
+        </header>
 
-    <header>
-        <div class="logo">@thepricore</div>
-        <nav>
-            <a href="about.html">About</a>
-            <a href="graphics.html">Graphics</a>
-        </nav>
-    </header>
+        <main id="main">
+            <section class="hero" aria-labelledby="hero-title">
+                <div>
+                    <p class="eyebrow">UX/UI designer · Digital experiences</p>
+                    <h1 id="hero-title">Designing with <span>clarity.</span></h1>
+                </div>
+                <div class="hero-aside">
+                    <p>I’m Prajakta — a UX/UI designer creating thoughtful digital experiences with clarity, structure, and intent.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#work">Explore selected work <span class="button-arrow" aria-hidden="true">↘</span></a>
+                        <a class="button" href="about.html">More about me</a>
+                    </div>
+                </div>
+            </section>
 
-    <section class="hero">
-        <h1>Hi, I’m prajakta UX/UI designer</h1>
-        <p>I focus on Minimalist design, I believe less can say more.</p>
-    </section>
+            <section class="work-section" id="work" aria-labelledby="work-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">A few things I’ve worked on</p>
+                        <h2 id="work-title">Selected work</h2>
+                    </div>
+                    <span class="section-count">01 — 04</span>
+                </div>
 
-    <div class="grid">
+                <div class="project-grid">
+                    <a class="project-card" href="dimi.html">
+                        <div class="project-media">
+                            <img src="Image/DiMi2.jpg" alt="DiMi digital menu concept with a QR code and mobile ordering screen" loading="lazy">
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-number">01 / Product design</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <h3>DiMi — Digital Menu App</h3>
+                        <p>A QR-based restaurant menu designed to make ordering clearer and faster.</p>
+                    </a>
 
-        <a href="dimi.html" style="text-decoration:none; color:inherit;">
-        <div class="card">
-            <h2>DiMi – Digital Menu App</h2>
-            <p>A modern restaurant digital menu app designed to improve order speed, reduce staff load, and enhance customer experience.</p>
-        </div>
-        </a>
+                    <a class="project-card" href="noirstudio.html">
+                        <div class="project-media">
+                            <img src="Image/noir.jpg" alt="Noir Studio website interface design" loading="lazy">
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-number">02 / UX case study</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <h3>Noir Studio – UI Design Showcase</h3>
+                        <p>A minimal web and mobile interface showcase focused on clear hierarchy and visual consistency.</p>
+                    </a>
 
-        <a href="noirstudio.html" style="text-decoration:none; color:inherit;">
-        <div class="card">
-            <h2>SynRience – Startup Research & Survival Guide</h2>
-            <p>A UX case study platform that helps young entrepreneurs validate business ideas.</p>
-        </div>
-        </a>
+                    <a class="project-card" href="cybercafe.html">
+                        <div class="project-media">
+                            <img src="Image/iPhone 16 - 2.jpg" alt="Online Cyber Café service platform shown across mobile and desktop" loading="lazy">
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-number">03 / Service design</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <h3>Online Cyber Café</h3>
+                        <p>A digital service platform for accessing forms, applications, and local cyber café support.</p>
+                    </a>
 
-        <a href="cybercafe.html" style="text-decoration:none; color:inherit;">
-        <div class="card">
-            <h2>Online Cyber Café</h2>
-            <p>A digital platform that helps users request online services like certificates, government forms, printing, and paperwork.</p>
-        </div>
-        </a>
+                    <a class="project-card" href="clovita.html">
+                        <div class="project-media">
+                            <img src="Image/Frame 8.png" alt="Clovita fashion interface concept with product and editorial screens" loading="lazy">
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-number">04 / Fashion tech</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <h3>Clovita Wear — Smart Fashion UI Design</h3>
+                        <p>A wearable-focused interface concept with an emphasis on simplicity and visual clarity.</p>
+                    </a>
+                </div>
+            </section>
 
-        <a href="clovita.html" style="text-decoration:none; color:inherit;">
-        <div class="card">
-            <h2>Clovita Wear – Smart Fashion UI Design</h2>
-            <p>A modern wearable smart device interface focused on simplicity and visually engaging UI design for tracking.</p>
-        </div>
-        </a>
+            <section class="video-section" aria-labelledby="video-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Motion &amp; storytelling</p>
+                        <h2 id="video-title">Video Editing</h2>
+                    </div>
+                    <span class="section-count">01 — 03</span>
+                </div>
+                <div class="video-rail">
+                    <div class="video-track">
+                        <article class="video-card">
+                            <div class="video-preview">
+                                <span class="video-number">Video project · 01</span>
+                                <span class="video-placeholder" aria-hidden="true">Bare Minimum</span>
+                                <video class="video-element" muted loop playsinline preload="metadata" data-video-src="Image/BareMinimum-edit.mp4" aria-label="Video preview for Bare Minimum edit" tabindex="0" role="button"></video>
+                            </div>
+                            <div class="video-card-info">
+                                <h3>Bare Minimum</h3>
+                                <button class="video-play-button" type="button" disabled>Play with sound</button>
+                                <p>Short-form video edit.</p>
+                            </div>
+                        </article>
+                        <article class="video-card">
+                            <div class="video-preview">
+                                <span class="video-number">Video project · 02</span>
+                                <span class="video-placeholder" aria-hidden="true">Nova Men</span>
+                                <video class="video-element" muted loop playsinline preload="metadata" data-video-src="Image/Nova MEN-Poster Video.mp4" aria-label="Video preview for Nova Men poster video" tabindex="0" role="button"></video>
+                            </div>
+                            <div class="video-card-info">
+                                <h3>Nova Men — Poster Video</h3>
+                                <button class="video-play-button" type="button" disabled>Play with sound</button>
+                                <p>Promotional poster video edit.</p>
+                            </div>
+                        </article>
+                        <article class="video-card">
+                            <div class="video-preview">
+                                <span class="video-number">Video project · 03</span>
+                                <span class="video-placeholder" aria-hidden="true">Coming soon</span>
+                                <video class="video-element" muted loop playsinline preload="none" data-video-src="" data-video-poster="" aria-label="Video preview for upcoming reel"></video>
+                            </div>
+                            <div class="video-card-info">
+                                <h3>Upcoming Reel</h3>
+                                <button class="video-play-button" type="button" disabled>Video coming soon</button>
+                                <p>Your next video project will go here.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <span>© 2026 Prajakta Deshmukh</span>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="about.html">About</a>
+                <a href="graphics.html">Graphics</a>
+                <a href="#main">Back to top ↑</a>
+            </nav>
+        </footer>
     </div>
+    <script>
+        (() => {
+            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+            const hoverPlayback = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-    <footer>
-        © 2026 Prajakta | Designer
-    </footer>
+            document.querySelectorAll(".video-card").forEach((card) => {
+                const video = card.querySelector(".video-element");
+                const button = card.querySelector(".video-play-button");
+                const source = video.dataset.videoSrc.trim();
+                let userPlayback = false;
 
+                video.muted = true;
+                if (source) {
+                    video.src = source;
+                    video.load();
+                    card.classList.add("has-video");
+                    button.disabled = false;
+                    button.textContent = "Play with sound";
+                }
+
+                const playMutedPreview = () => {
+                    if (!source || userPlayback) return;
+                    video.muted = true;
+                    video.play().catch(() => {
+                        button.textContent = "Preview unavailable";
+                        button.disabled = true;
+                    });
+                };
+
+                const playWithSound = () => {
+                    if (!source) return;
+                    userPlayback = true;
+                    video.muted = false;
+                    video.play().catch(() => {
+                        userPlayback = false;
+                        button.textContent = "Unable to play";
+                        button.disabled = true;
+                    });
+                };
+
+                const activateVideo = () => {
+                    if (video.paused) {
+                        playWithSound();
+                    } else if (video.muted) {
+                        userPlayback = true;
+                        video.muted = false;
+                        button.textContent = "Pause video";
+                    } else {
+                        userPlayback = false;
+                        video.pause();
+                    }
+                };
+
+                card.addEventListener("pointerenter", (event) => {
+                    if (event.pointerType === "mouse" && hoverPlayback.matches && !reducedMotion.matches) {
+                        playMutedPreview();
+                    }
+                });
+
+                card.addEventListener("pointerleave", (event) => {
+                    if (event.pointerType === "mouse" && !userPlayback) video.pause();
+                });
+
+                button.addEventListener("click", () => {
+                    activateVideo();
+                });
+
+                video.addEventListener("click", activateVideo);
+
+                video.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        activateVideo();
+                    }
+                });
+
+                video.addEventListener("play", () => {
+                    button.textContent = video.muted ? "Play with sound" : "Pause video";
+                });
+
+                video.addEventListener("volumechange", () => {
+                    if (!video.paused) {
+                        button.textContent = video.muted ? "Play with sound" : "Pause video";
+                    }
+                });
+
+                video.addEventListener("canplay", () => {
+                    card.classList.add("video-ready");
+                });
+
+                video.addEventListener("error", () => {
+                    button.disabled = true;
+                    button.textContent = "Preview unavailable";
+                });
+
+                video.addEventListener("pause", () => {
+                    userPlayback = false;
+                    button.textContent = "Play with sound";
+                });
+            });
+
+        })();
+    </script>
 </body>
-</html> 
+</html>

@@ -11,6 +11,7 @@
     --text:#fff;
     --muted:#a0a0a0;
     --card:#111;
+    --accent:#d0b99a;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -30,13 +31,23 @@ header{
     margin-bottom:120px;
 }
 
-.logo{font-size:24px;}
+.logo{
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:-0.04em;
+}
+
+.logo span{color:var(--accent);}
 
 nav a{
     color:white;
     text-decoration:none;
     font-size:20px;
+    transition:color 180ms ease;
 }
+
+nav a:hover,
+nav a:focus-visible{color:var(--accent);}
 
 /* Layout */
 section{
@@ -76,6 +87,7 @@ h2{
     font-size:32px;
     font-weight:400;
     margin-bottom:20px;
+    color:var(--accent);
 }
 
 ul{
@@ -94,6 +106,14 @@ ul{
     color:white;
     text-decoration:none;
     font-size:18px;
+    transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease;
+}
+
+.resume-btn:hover,
+.resume-btn:focus-visible{
+    border-color:var(--accent);
+    background:rgba(208,185,154,.1);
+    color:var(--accent);
 }
 
 /* Back */
@@ -106,6 +126,13 @@ ul{
     text-decoration:none;
     border-bottom:1px solid white;
     padding-bottom:4px;
+    transition:color 180ms ease,border-color 180ms ease;
+}
+
+.back a:hover,
+.back a:focus-visible{
+    color:var(--accent);
+    border-color:var(--accent);
 }
 
 /* Responsive */
@@ -120,7 +147,7 @@ ul{
 <body>
 
 <header>
-    <div class="logo">@thepricore</div>
+    <div class="logo">@thepri<span>core</span></div>
     <nav>
         <a href="index.html">Home</a>
     </nav>
