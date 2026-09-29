@@ -11,6 +11,7 @@
     --text:#fff;
     --muted:#a0a0a0;
     --card:#111;
+    --accent:#d0b99a;
 }
 
 * {
@@ -20,9 +21,12 @@
 }
 
 body {
-    background:var(--bg);
+    background:
+        radial-gradient(ellipse at 78% 13%, rgba(208, 185, 154, 0.07), transparent 28rem),
+        var(--bg);
     color:var(--text);
-    font-family:'Corbel','Segoe UI',sans-serif;
+    font-family:"Corbel", "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
     padding:60px 138px;
 }
 
@@ -35,13 +39,25 @@ header {
 }
 
 .logo {
-    font-size:24px;
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:-0.04em;
+}
+
+.logo span {
+    color:var(--accent);
 }
 
 nav a {
     color:white;
     text-decoration:none;
     font-size:20px;
+    transition:color 180ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color:var(--accent);
 }
 
 /* Page Title */
@@ -55,6 +71,7 @@ h1 {
     font-weight:400;
     letter-spacing:-0.05em;
     margin-bottom:20px;
+    color:var(--accent);
 }
 
 .subtitle {
@@ -85,6 +102,12 @@ h1 {
     font-size:16px;
     font-weight:400;
     margin-bottom:4px;
+    transition:color 180ms ease;
+}
+
+.graphic-card:hover .graphic-info h3,
+.graphic-card:focus-visible .graphic-info h3 {
+    color:var(--accent);
 }
 
 .graphic-info p {
@@ -109,8 +132,14 @@ h1 {
 .back a {
     color:white;
     text-decoration:none;
-    border-bottom:1px solid white;
+    border-bottom:1px solid var(--accent);
     padding-bottom:4px;
+    transition:color 180ms ease,border-color 180ms ease;
+}
+
+.back a:hover,
+.back a:focus-visible {
+    color:var(--accent);
 }
 
 /* Responsive */
@@ -161,8 +190,14 @@ h1 {
   top: 20px;
   right: 30px;
   font-size: 40px;
-  color: white;
+  color: var(--text);
   text-decoration: none;
+  transition:color 180ms ease;
+}
+
+.close:hover,
+.close:focus-visible {
+  color:var(--accent);
 }
 </style>
 </head>
@@ -170,7 +205,7 @@ h1 {
 <body>
 
 <header>
-    <div class="logo">@thepricore</div>
+    <div class="logo">@thepri<span>core</span></div>
     <nav>
         <a href="index.html">Home</a>
     </nav>
