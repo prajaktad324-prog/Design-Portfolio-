@@ -25,6 +25,7 @@
             /* Using Corbel as requested */
             font-family: 'Corbel', 'Segoe UI', sans-serif;
             padding: 60px 138px; /* X: 138 from your Figma */
+            scroll-behavior: smooth;
         }
 
         /* 2. Header Navigation */
@@ -103,6 +104,115 @@
             line-height: 1.5;
         }
 
+        /* Hover Effects */
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid transparent;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: border-color 0.4s ease;
+    pointer-events: none;
+}
+
+.card::after {
+    content: '→';
+    position: absolute;
+    bottom: 36px;
+    right: 44px;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color: #fff;
+}
+
+.card:hover {
+    background: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+.card:hover::before {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.card:hover::after {
+    opacity: 0.5;
+    transform: translateX(0);
+}
+
+/* VIDEO SECTION */
+
+.video-section {
+    margin-top: 140px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+.section-header p {
+    color: #888;
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+/* Horizontal Scroll */
+
+.video-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+/* Hide scrollbar */
+
+.video-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.video-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Video Cards */
+
+.video-card {
+    min-width: 320px;
+    height: 560px;
+    background: #111;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.35s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
         /* 5. Footer */
         footer {
@@ -148,8 +258,8 @@
 
         <a href="noirstudio.html" style="text-decoration:none; color:inherit;">
         <div class="card">
-            <h2>SynRience – Startup Research & Survival Guide</h2>
-            <p>A UX case study platform that helps young entrepreneurs validate business ideas.</p>
+            <h2>Noir Studio is the Genz Designer Woman Brand</h2>
+            <p>Were What You believe.</p>
         </div>
         </a>
 
@@ -168,9 +278,49 @@
         </a>
     </div>
 
+    <!-- Video Edits Section -->
+<section class="video-section">
+
+    <div class="section-header">
+        <h2>Video Edits</h2>
+        <p>Selected edits & motion work.</p>
+    </div>
+
+    <div class="video-scroll">
+
+        <div class="video-card">
+            <video src="video1.mp4" muted autoplay loop></video>
+        </div>
+
+        <div class="video-card">
+            <video src="video2.mp4" muted autoplay loop></video>
+        </div>
+
+        <div class="video-card">
+            <video src="video3.mp4" muted autoplay loop></video>
+        </div>
+
+        <div class="video-card">
+            <video src="video4.mp4" muted autoplay loop></video>
+        </div>
+
+    </div>
+</section>
+
     <footer>
         © 2026 Prajakta | Designer
     </footer>
 
 </body>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </html> 
